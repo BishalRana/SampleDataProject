@@ -1,0 +1,120 @@
+﻿@model JsonSample.Models.PeopleList
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="page-header row">
+    <h3>People List</h3>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    
+    <div class=" panel panel-primary ">
+        <div class="panel-body">
+            <div class="form-inline">
+                <div class="form-group">
+                    @Html.Label("", "First Name", htmlAttributes: new { @class = "" })
+                    @Html.TextBox("firstName", "", htmlAttributes: new { @class = "form-control" })
+                </div>
+                <div class=form-group>
+                    @Html.Label("", "Last Name", htmlAttributes: new { @class = "" })
+                    @Html.TextBox("lastName", "", htmlAttributes: new { @class = "form-control" })
+                </div>
+                <input type="submit" class="btn btn-primary" value="Filter" />
+            </div>
+        </div>
+    </div>
+}
+
+@Html.ActionLink("Create", "Create", null, null, new { @class = "" })
+
+<div style="padding-top: 10px;">
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table table-striped table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.peopleData[0].firstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.peopleData[0].lastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.peopleData[0].Date_Of_Birth)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.peopleData[0].nickname)
+                        </th>
+                        <th>
+                            Addresses
+                        </th>
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.peopleData != null)
+                    {
+                        @foreach (var people in Model.peopleData)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => people.firstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => people.lastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => people.Date_Of_Birth)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => people.nickname)
+                            </td>
+                            <td>
+                                @if (people.addresses != null)
+                                {
+                                    @foreach (var address in people.addresses)
+                                    {
+                                        <div>
+                                            <address>
+                                            @Html.DisplayFor(modelItem => address.line1)
+                                            @if (!String.IsNullOrEmpty(address.line2))
+                                            {
+                                            <br />
+                                                @Html.DisplayFor(modelItem => address.line2)
+                                            }
+                                            @if (!String.IsNullOrEmpty(address.postCode))
+                                            {
+                                            <br />
+                                            @Html.DisplayFor(modelItem => address.postCode)
+                                            }
+                                            <br />
+                                            @Html.DisplayFor(modelItem => address.country)
+                                            <br />
+                                            </address>
+                                        </div>
+
+                                       }
+                                }
+
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { fName = people.firstName, lName = people.lastName }, new { @class = "" })
+                                @Html.ActionLink("Delete", "Delete", new { fName = people.firstName, lName = people.lastName }, new { @class = "" })
+                            </td>
+                        </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

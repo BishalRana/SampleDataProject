@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{EA70EC87-4B94-41C8-93EF-9E2326B29944}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Service/PeopleDataService.cs">
+    <Files>
+      <File FileName="Controllers/PeopleController.cs" Line="75" Column="117" />
+      <File FileName="Service/PeopleDataService.cs" Line="78" Column="51" />
+      <File FileName="Program.cs" Line="1" Column="1" />
+      <File FileName="appsettings.json" Line="1" Column="1" />
+      <File FileName="appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="Startup.cs" Line="34" Column="11" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.JsonSample PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

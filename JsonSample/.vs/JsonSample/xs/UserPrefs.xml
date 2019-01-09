@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{614AAF87-2429-4F8A-A15A-6FC6738254A9}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="JsonSample/Views/People/Delete.cshtml">
+    <Files>
+      <File FileName="JsonSample/PeopleData.json" Line="1" Column="1" />
+      <File FileName="JsonSample/bundleconfig.json" Line="1" Column="1" />
+      <File FileName="JsonSample/Views/People/Index.cshtml" Line="18" Column="33" />
+      <File FileName="JsonSample/Service/PeopleDataService.cs" Line="68" Column="24" />
+      <File FileName="JsonSample/Controllers/PeopleController.cs" Line="66" Column="29" />
+      <File FileName="JsonSample/Views/People/Delete.cshtml" Line="65" Column="68" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.JsonSample PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>

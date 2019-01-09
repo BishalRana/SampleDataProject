@@ -1,0 +1,10 @@
+/Users/bishalrana/Projects/JsonSample/JsonSample/bin/Debug/netcoreapp2.0/JsonSample.deps.json
+/Users/bishalrana/Projects/JsonSample/JsonSample/bin/Debug/netcoreapp2.0/JsonSample.runtimeconfig.json
+/Users/bishalrana/Projects/JsonSample/JsonSample/bin/Debug/netcoreapp2.0/JsonSample.runtimeconfig.dev.json
+/Users/bishalrana/Projects/JsonSample/JsonSample/bin/Debug/netcoreapp2.0/JsonSample.dll
+/Users/bishalrana/Projects/JsonSample/JsonSample/bin/Debug/netcoreapp2.0/JsonSample.pdb
+/Users/bishalrana/Projects/JsonSample/JsonSample/obj/Debug/netcoreapp2.0/JsonSample.csproj.CoreCompileInputs.cache
+/Users/bishalrana/Projects/JsonSample/JsonSample/obj/Debug/netcoreapp2.0/JsonSample.AssemblyInfoInputs.cache
+/Users/bishalrana/Projects/JsonSample/JsonSample/obj/Debug/netcoreapp2.0/JsonSample.AssemblyInfo.cs
+/Users/bishalrana/Projects/JsonSample/JsonSample/obj/Debug/netcoreapp2.0/JsonSample.dll
+/Users/bishalrana/Projects/JsonSample/JsonSample/obj/Debug/netcoreapp2.0/JsonSample.pdb

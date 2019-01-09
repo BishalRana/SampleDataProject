@@ -1,0 +1,16 @@
+/Users/bishalrana/Projects/JsonSample/JsonSample
+--output-path=obj/Debug/netcoreapp2.0/
+--application-name=JsonSample
+--content-root=/Users/bishalrana/Projects/JsonSample/JsonSample
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/Home/Index.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/People/Address_Partial.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/People/Create.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/People/Delete.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/People/Edit.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/People/Index.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/Shared/Error.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/Shared/NotFound.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/Shared/_Layout.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/Shared/_ValidationScriptsPartial.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/_ViewImports.cshtml
+--file=/Users/bishalrana/Projects/JsonSample/JsonSample/Views/_ViewStart.cshtml

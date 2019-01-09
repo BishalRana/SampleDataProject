@@ -1,0 +1,141 @@
+﻿@model JsonSample.Models.People;
+    @{
+        Layout = null;
+    }
+
+    <br />
+    @{int i = 0;}
+    @if (Model.addresses!=null)
+    {
+        
+         @foreach (var address in Model.addresses)
+        {
+        <div id="addressPanel[@i]" class="col-md-offset-1 col-md-6">
+             <div class=" row form-horizontal">
+                 <fieldset style="border: solid; border-width: thin; height: 290px; border-color: #a8a8a8;">
+                     <legend visible="true" style="width:auto; margin-bottom: 0px; font-size: 20px; font-weight: bold; color: #1f497d;"><label style="text-decoration-line:none; padding-right:5px;">Address</label></legend>
+
+                     <input name='addresses.Index' value="@i" type='hidden' />
+                     <div class="form-group">
+                         <label class="control-label col-md-2"> Line1</label>
+                         <div class="col-md-6 .col-md-offset-4">
+                             <input id='Address_[@i]__Input' type='text' name='addresses[@i].line1' class="form-control" value='@address.line1' />
+                             @Html.ValidationMessageFor(model => model.addresses[@i].line1, "", new { @class = "text-danger" })
+                         </div>
+                     </div>
+
+                     <div class=form-group>
+                         <label class="control-label col-md-2"> Line2</label>
+                         <div class="col-md-6 .col-md-offset-4">
+                             <input id='Address_[@i]__Input' type='text' name='addresses[@i].line2' class="form-control" value='@address.line2' />
+                             @Html.ValidationMessageFor(model => model.addresses[@i].line2, "", new { @class = "text-danger" })
+                         </div>
+                     </div>
+
+                     <div class=form-group>
+                         <label class="control-label col-md-2">Post Code</label>
+                         <div class="col-md-6 .col-md-offset-4">
+                             <input id='Address_[@i]__Input' type='text' name='addresses[@i].postCode' class="form-control" value='@address.postCode' />
+                             @Html.ValidationMessageFor(model => model.addresses[@i].postCode, "", new { @class = "text-danger" })
+                         </div>
+                     </div>
+
+                     <div class=form-group>
+                         <label class="control-label col-md-2"> Country</label>
+                         <div class="col-md-6 .col-md-offset-4">
+                             @Html.DropDownListFor(model => model.addresses[@i].country, ViewBag.europeanCountries as List<SelectListItem>
+                            , "-Select Country-", new { htmlAttributes = new { @class = "form-control dropdown-menu" } })
+                          
+                             @Html.ValidationMessageFor(model => model.addresses[@i].country, "", new { @class = "text-danger" })
+                         </div>
+                     </div>
+                     <div class=form-group>
+                         <label class="control-label col-md-2"> </label>
+                         <div class="col-md-6 .col-md-offset-4">
+                            <input id='btnRemoveAddress' class="buttonRemoveAddress" type='button' value='Remove' onclick='removeAddressRow(@i)' />
+                         </div>
+                     </div>
+
+                 </fieldset>
+
+            </div>
+
+        </div>
+    i++;
+    }            
+}
+
+
+
+
+    <script type="text/javascript">
+    function addAddressRow()
+    {
+
+            @{
+                @if(Model.addresses!=null)
+                {
+                   Model.addresses.Add(new Address());
+                }
+            }
+
+            var index = $("#divAddress").children("div").length;
+            var indexCell = "<input name='addresses.Index' type='hidden' value='" + index + "' />";
+
+            var line1Label = "<label class='control-label col-md-2'>Line1</label>";
+            var line1 = "<input id='Address_[" + index + "]__Input' name='addresses[" + index + "].line1' type='text' value='' class='form-control'/>";
+            var line1VaidationMsg = '@Html.ValidationMessageFor(model=>model.addresses[@i].line1, "", new { @class = "text-danger" })'; 
+            var line2Label = "<label class='control-label col-md-2'>Line2</label>";
+            var line2 = "<input id='Address_[" + index + "]__Input' name='addresses[" + index + "].line2' type='text' value='' class='form-control'/>";
+            var line2VaidationMsg = '@Html.ValidationMessageFor(model=>model.addresses[@i].line2, "", new { @class = "text-danger" })';
+
+
+            var removeAddressCell = "<input id='btnRemoveAddress' type='button' value='Remove' onclick='removeAddressRow(" + index + ")' />";
+
+            var postCodeLabel = "<label class='control-label col-md-2'>Post Code</label>";
+            var postCode = "<input id='Address_[" + index + "]__Input' name='addresses[" + index + "].postCode' type='text' value='' class='form-control'/>";
+            var postCodeValidationMsg = '@Html.ValidationMessageFor(model=>model.addresses[@i].postCode,"",new { @class= "text-danger"})';
+
+
+            var countryLabel = "<label>Country</label>";
+            var countryDropDownList = '<select class="input-validation-error form-control" data-val="true" data-val-required="The Country field is required."'
+            +'htmlAttributes="{ class = form-control }" id="addresses_'+index+'__country" name="addresses['+index+'].country"><option value="">-Select Country-</option>'+
+
+            @{
+                foreach(var country in ViewBag.europeanCountries)
+                {
+                    @:'<option value="@country.Value">@country.Text</option>' +
+
+                }
+            }
+
+
+            '</select>';
+
+            var countryValidationMsg = '@Html.ValidationMessageFor(model => model.addresses[@i].country, "", new { @class = "text-danger" })'+'</br>';
+            var secondDiv ="<div class='row form-horizontal'>";
+            var formGroupDiv = "<div class='form-group'>";
+            var labelTag = "<label class='control-label col-md-2'>";
+            var formFieldDiv = "<div class='col-md-6 .col-md-offset-4'>";
+            var formButtonDiv = "<div class='col-md-offset-2 col-md-10'>";
+            var fieldSetTag ="<fieldset style=border: solid; border-width: thin; height: 300px; border-color: #a8a8a8;'>";
+            var legendTag = "<legend visible='true' style=width:auto; margin-bottom: 0px; font-size: 20px; font-weight: bold; color: #1f497d;'><label style=text-decoration-line:none; padding-right:5px;'>Address</label>";
+
+            var newAddressRow = "<div id='addressPanel[" + index + "]' class='col-md-offset-1 col-md-6'>"+secondDiv+fieldSetTag+legendTag+"</legend>"+indexCell+
+                                    formGroupDiv+labelTag+line1Label+"</label>" + formFieldDiv+ line1 + line1VaidationMsg+"</div></div>"+
+                                    formGroupDiv+labelTag+line2Label+"</label>" +formFieldDiv + line2 + line2VaidationMsg +"</div></div>"+
+                                    formGroupDiv+labelTag+postCodeLabel+"</label>" +formFieldDiv + postCode + postCodeValidationMsg+"</div></div>"+
+                                    formGroupDiv+labelTag+countryLabel +"</label>" + formFieldDiv +countryDropDownList +countryValidationMsg+"</div></div>"+
+                                    formGroupDiv+labelTag+"</label>"+formFieldDiv+removeAddressCell+"</div></div>"+
+                                "</fieldset></div></div>";
+            $("#divAddress").append(newAddressRow);
+    }
+
+    function removeAddressRow(id)
+    {
+            var controlToBeRemoved = "addressPanel["+ arguments[0] + "]";
+            document.getElementById(controlToBeRemoved).remove();
+    }
+
+    </script>
+
